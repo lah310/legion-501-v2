@@ -649,14 +649,14 @@ a {
   transform: translate(-50%, -50%);
   overflow: hidden;
   scale: 1.1;
-  background: url("body-bg.png") no-repeat;
+  background: url("https://i.imgur.com/EpBuIaZ.png") no-repeat;
   filter: grayscale(100%);
 }
 .Body.Login {
   height: 100vh;
 }
 .Body.Login::before {
-  background: url("login-bg.png") no-repeat;
+  background: url("https://i.imgur.com/uIiNJii.png") no-repeat;
   filter: grayscale(100%);
 }
 

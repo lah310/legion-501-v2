@@ -10,7 +10,7 @@ const Nav = () => {
 		<div className={css.Nav}>
 			<div className={css.Logo}>
 				<img
-					src='legion-logo2.png'
+					src='https://i.imgur.com/erjBuOn.png'
 					className={css.Icon}
 				/>
 				<p>Legion 501</p>
