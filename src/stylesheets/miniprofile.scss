@@ -1,0 +1,84 @@
+.MiniProfile {
+	position: sticky;
+	top: 120px;
+	background: transparent;
+	backdrop-filter: var(--blur);
+	border: var(--glass-border);
+	max-width: calc(250px + 40px);
+	max-height: 500px;
+	border-radius: 10px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	small {
+		color: white;
+		font-weight: bold;
+	}
+
+	.Section {
+		font-size: 15px;
+		border-radius: 10px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		.Name {
+			font-size: 20px;
+			font-weight: bold;
+			text-decoration: underline;
+			margin-block: 15px;
+		}
+		p {
+			color: white;
+			&.Positive {
+				color: rgb(117, 255, 117);
+			}
+			&.Negative {
+				color: rgb(255, 59, 59);
+			}
+			&.Neutral {
+				color: rgb(73, 91, 255);
+			}
+			&.Label {
+				font-weight: bold;
+			}
+		}
+	}
+
+	.Pfp {
+		height: 250px;
+		width: 250px;
+		margin-inline: auto;
+		object-fit: cover;
+		overflow: hidden;
+		border-radius: 10px;
+		background-color: white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		img {
+			height: 100%;
+		}
+		.Hover {
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			width: 250px;
+			height: 250px;
+			background: transparent;
+			border-radius: 10px;
+			color: transparent;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			&:hover {
+				color: white;
+				background: rgba(0, 0, 0, 0.6);
+			}
+		}
+	}
+}

@@ -1,0 +1,44 @@
+.Login {
+	display: flex;
+	.Header {
+		font-weight: bold;
+		font-size: 30px;
+	}
+
+	.Form {
+		padding: 40px;
+		color: white;
+		background: transparent;
+		border: 2px solid rgba(255, 255, 255, 0.2);
+		backdrop-filter: var(--blur) brightness(80%);
+
+		button[type='submit'] {
+			background: transparent;
+			width: 50%;
+			margin-inline: auto;
+			&:hover {
+				background: white;
+				color: #212121;
+			}
+		}
+	}
+
+	.Status {
+		margin-top: -100%;
+		transition: all 1s ease-out;
+		font-weight: bold;
+		&.Visible {
+			margin-top: 0;
+			&.Error {
+				color: red;
+			}
+		}
+	}
+
+	.StatusContainer {
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}

@@ -1,0 +1,134 @@
+.Nav {
+	width: 100%;
+	height: 100px;
+	position: sticky;
+	top: 0;
+	left: 0;
+	background: transparent;
+	border-bottom: var(--glass-border);
+	display: flex;
+	flex-direction: row;
+	color: white;
+	justify-content: space-between;
+	backdrop-filter: var(--blur);
+
+	.Logo {
+		position: relative;
+		font-size: 40px;
+		font-weight: bold;
+		text-align: center;
+		display: flex;
+		flex-flow: row;
+		.Icon {
+			width: 80px;
+			height: 80px;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+			margin-block: auto;
+			margin-inline: 15px;
+		}
+		p {
+			margin-block: auto;
+		}
+	}
+
+	.Navigation {
+		margin-inline: 30px;
+		width: auto;
+		height: 100%;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 10px;
+		right: 0;
+
+		ul {
+			display: flex;
+			width: 100%;
+
+			.NavigationButton {
+				position: relative;
+				list-style: none;
+				width: 70px;
+				height: 70px;
+				z-index: 1;
+				cursor: pointer;
+
+				&.Active {
+					div {
+						.Icon {
+							// transform: translateY(35px);
+							color: white;
+						}
+						.Text {
+							opacity: 1;
+							transform: translateY(10%);
+						}
+					}
+				}
+
+				div {
+					position: relative;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex-direction: column;
+					width: 100%;
+					text-align: center;
+					font-weight: 500;
+					.Icon {
+						position: relative;
+						display: block;
+						line-height: 75px;
+						font-size: 1.5em;
+						text-align: center;
+						color: white;
+					}
+					.Text {
+						display: none;
+						position: absolute;
+						color: white;
+						font-weight: 400;
+						font-size: 1em;
+						letter-spacing: 0.05em;
+						opacity: 0;
+						top: 10px;
+					}
+				}
+			}
+		}
+	}
+	.Indicator {
+		position: absolute;
+		top: 15%;
+		border: var(--glass-border);
+		width: 70px;
+		height: 70px;
+		background: transparent;
+		border-radius: 15px;
+		backdrop-filter: var(--blur);
+	}
+}
+
+.Navigation ul li:nth-child(1).Active ~ .Indicator {
+	transform: translateX(calc(70px * 0));
+}
+
+.Navigation ul li:nth-child(2).Active ~ .Indicator {
+	transform: translateX(calc(70px * 1));
+}
+
+.Navigation ul li:nth-child(3).Active ~ .Indicator {
+	transform: translateX(calc(70px * 2));
+}
+
+.Navigation ul li:nth-child(4).Active ~ .Indicator {
+	transform: translateX(calc(70px * 3));
+}
+
+.Disabled {
+	color: #212121;
+	cursor: default;
+}

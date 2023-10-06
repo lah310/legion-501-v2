@@ -1,0 +1,142 @@
+.NewPost {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	// width: minmax(400px, 60%);
+	height: 500px;
+	gap: 20px;
+	border: var(--glass-border);
+	border-radius: 10px;
+	padding: 40px;
+
+	.Form {
+		display: flex;
+		.Hint {
+			position: absolute;
+			width: 100%;
+			height: auto;
+			font-size: 12px;
+			bottom: 50px;
+			// p {
+			// 	transform: translateY(100%);
+			// }
+		}
+		width: 100%;
+		// margin-right: 40px;
+		textarea {
+			height: 100%;
+			resize: none;
+			padding: 20px;
+			border-radius: 10px;
+			font-size: 15px;
+			&::placeholder {
+				color: white;
+			}
+		}
+		input {
+			border-radius: 10px;
+		}
+	}
+}
+
+.Feed {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(350px, 1fr));
+	gap: 20px;
+}
+
+.Post {
+	display: flex;
+	color: white;
+	flex-direction: column;
+	gap: 20px;
+	border: var(--glass-border);
+	height: 400px;
+	width: 100%;
+	border-radius: 15px;
+	padding: 20px;
+	z-index: 1;
+	backdrop-filter: var(--blur);
+	overflow: hidden;
+	cursor: pointer;
+	&:hover {
+		transform: translateY(-5px);
+	}
+	&.Preview {
+		// width: minmax(350px 100%);
+		cursor: default;
+		&:hover {
+			transform: none;
+		}
+		height: 100%;
+		width: 350px;
+		.PostImage {
+			width: 100%;
+			// height: 200px;
+		}
+	}
+	.PostBody {
+		height: auto;
+		max-height: 100%;
+		display: flex;
+		flex-flow: column nowrap;
+		gap: 10px;
+		.PostHeader {
+			display: flex;
+			flex-direction: row nowrap;
+			justify-content: space-between;
+			align-items: center;
+			.PostUsername {
+				font-size: 20px;
+			}
+			.PostDate {
+				font-size: 15px;
+			}
+		}
+		.PostContent {
+			font-size: 15px;
+			width: 100%;
+			max-height: 100%;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			&.Hidden {
+				color: transparent;
+			}
+			&.Full {
+				white-space: wrap;
+			}
+		}
+	}
+	.PostImage {
+		border-radius: 5px;
+		height: 300px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		img {
+			width: auto;
+			height: 100%;
+			object-fit: cover;
+		}
+		.Hover {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			background: transparent;
+			border-radius: 10px;
+			color: transparent;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			&:hover {
+				color: white;
+				background: rgba(0, 0, 0, 0.6);
+			}
+		}
+	}
+}

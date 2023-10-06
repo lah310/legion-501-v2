@@ -1,0 +1,697 @@
+@import url("https://fonts.googleapis.com/css2?family=Gabarito&family=Poppins:wght@100;400&family=Roboto+Mono&family=Tilt+Prism&display=swap");
+@import url("https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css");
+.InputBox {
+  width: 100%;
+  height: 50px;
+  position: relative;
+}
+.InputBox i {
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+input,
+select {
+  height: auto;
+  width: 100%;
+  border-radius: 60px;
+  font-size: 15px;
+  font-weight: normal;
+  padding: 10px 30px 10px 30px;
+}
+
+select {
+  cursor: pointer;
+}
+select::-ms-expand {
+  display: none;
+}
+select option {
+  color: white;
+  background-color: #474747;
+  font-size: 15px;
+}
+select option:hover {
+  background-color: #212121;
+}
+
+form {
+  border-radius: 10px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+form h2,
+form span {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+form button[type=submit] {
+  width: 100%;
+}
+form input,
+form select,
+form textarea,
+form button {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+form input::placeholder,
+form select::placeholder,
+form textarea::placeholder,
+form button::placeholder {
+  color: white;
+}
+form input:focus,
+form select:focus,
+form textarea:focus,
+form button:focus {
+  border-color: white;
+}
+form button:hover {
+  background: white;
+  color: black;
+}
+
+form.Filled,
+input.Filled {
+  border-color: white;
+}
+form.Error,
+input.Error {
+  border-color: red;
+}
+
+button {
+  background: #212121;
+  color: white;
+  height: 50px;
+  width: auto;
+  border: none;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 20px;
+  padding-block: 10px;
+  padding-inline: 30px;
+  text-justify: center;
+  font-weight: semi-bold;
+  cursor: pointer;
+}
+button:hover {
+  transform: translateY(-1px);
+}
+
+.BtnGroup {
+  display: flex;
+  flex-flow: row nowrap;
+  height: 50px;
+}
+.BtnGroup button {
+  background: transparent;
+  border: var(--glass-border);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 0;
+  height: 100%;
+}
+.BtnGroup button.Wide {
+  width: auto;
+}
+.BtnGroup button.Squared {
+  width: 50px;
+}
+.BtnGroup button:not(:last-child) {
+  border-right: none;
+}
+.BtnGroup button:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.BtnGroup button:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.BtnGroup button:hover {
+  background: white;
+  color: black;
+  transform: none;
+}
+
+@keyframes slide-in {
+  100% {
+    transform: translateY(0%);
+  }
+}
+.Nav {
+  width: 100%;
+  height: 100px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: transparent;
+  border-bottom: var(--glass-border);
+  display: flex;
+  flex-direction: row;
+  color: white;
+  justify-content: space-between;
+  backdrop-filter: var(--blur);
+}
+.Nav .Logo {
+  position: relative;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  flex-flow: row;
+}
+.Nav .Logo .Icon {
+  width: 80px;
+  height: 80px;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  margin-block: auto;
+  margin-inline: 15px;
+}
+.Nav .Logo p {
+  margin-block: auto;
+}
+.Nav .Navigation {
+  margin-inline: 30px;
+  width: auto;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  right: 0;
+}
+.Nav .Navigation ul {
+  display: flex;
+  width: 100%;
+}
+.Nav .Navigation ul .NavigationButton {
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+  cursor: pointer;
+}
+.Nav .Navigation ul .NavigationButton.Active div .Icon {
+  color: white;
+}
+.Nav .Navigation ul .NavigationButton.Active div .Text {
+  opacity: 1;
+  transform: translateY(10%);
+}
+.Nav .Navigation ul .NavigationButton div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+.Nav .Navigation ul .NavigationButton div .Icon {
+  position: relative;
+  display: block;
+  line-height: 75px;
+  font-size: 1.5em;
+  text-align: center;
+  color: white;
+}
+.Nav .Navigation ul .NavigationButton div .Text {
+  display: none;
+  position: absolute;
+  color: white;
+  font-weight: 400;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  top: 10px;
+}
+.Nav .Indicator {
+  position: absolute;
+  top: 15%;
+  border: var(--glass-border);
+  width: 70px;
+  height: 70px;
+  background: transparent;
+  border-radius: 15px;
+  backdrop-filter: var(--blur);
+}
+
+.Navigation ul li:nth-child(1).Active ~ .Indicator {
+  transform: translateX(0px);
+}
+
+.Navigation ul li:nth-child(2).Active ~ .Indicator {
+  transform: translateX(70px);
+}
+
+.Navigation ul li:nth-child(3).Active ~ .Indicator {
+  transform: translateX(140px);
+}
+
+.Navigation ul li:nth-child(4).Active ~ .Indicator {
+  transform: translateX(210px);
+}
+
+.Disabled {
+  color: #212121;
+  cursor: default;
+}
+
+.MiniProfile {
+  position: sticky;
+  top: 120px;
+  background: transparent;
+  backdrop-filter: var(--blur);
+  border: var(--glass-border);
+  max-width: 290px;
+  max-height: 500px;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.MiniProfile small {
+  color: white;
+  font-weight: bold;
+}
+.MiniProfile .Section {
+  font-size: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.MiniProfile .Section .Name {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-block: 15px;
+}
+.MiniProfile .Section p {
+  color: white;
+}
+.MiniProfile .Section p.Positive {
+  color: rgb(117, 255, 117);
+}
+.MiniProfile .Section p.Negative {
+  color: rgb(255, 59, 59);
+}
+.MiniProfile .Section p.Neutral {
+  color: rgb(73, 91, 255);
+}
+.MiniProfile .Section p.Label {
+  font-weight: bold;
+}
+.MiniProfile .Pfp {
+  height: 250px;
+  width: 250px;
+  margin-inline: auto;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.MiniProfile .Pfp img {
+  height: 100%;
+}
+.MiniProfile .Pfp .Hover {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 250px;
+  height: 250px;
+  background: transparent;
+  border-radius: 10px;
+  color: transparent;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.MiniProfile .Pfp .Hover:hover {
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.NewPost {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: 500px;
+  gap: 20px;
+  border: var(--glass-border);
+  border-radius: 10px;
+  padding: 40px;
+}
+.NewPost .Form {
+  display: flex;
+  width: 100%;
+}
+.NewPost .Form .Hint {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  font-size: 12px;
+  bottom: 50px;
+}
+.NewPost .Form textarea {
+  height: 100%;
+  resize: none;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+.NewPost .Form textarea::placeholder {
+  color: white;
+}
+.NewPost .Form input {
+  border-radius: 10px;
+}
+
+.Feed {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.Post {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  gap: 20px;
+  border: var(--glass-border);
+  height: 400px;
+  width: 100%;
+  border-radius: 15px;
+  padding: 20px;
+  z-index: 1;
+  backdrop-filter: var(--blur);
+  overflow: hidden;
+  cursor: pointer;
+}
+.Post:hover {
+  transform: translateY(-5px);
+}
+.Post.Preview {
+  cursor: default;
+  height: 100%;
+  width: 350px;
+}
+.Post.Preview:hover {
+  transform: none;
+}
+.Post.Preview .PostImage {
+  width: 100%;
+}
+.Post .PostBody {
+  height: auto;
+  max-height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+}
+.Post .PostBody .PostHeader {
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.Post .PostBody .PostHeader .PostUsername {
+  font-size: 20px;
+}
+.Post .PostBody .PostHeader .PostDate {
+  font-size: 15px;
+}
+.Post .PostBody .PostContent {
+  font-size: 15px;
+  width: 100%;
+  max-height: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.Post .PostBody .PostContent.Hidden {
+  color: transparent;
+}
+.Post .PostBody .PostContent.Full {
+  white-space: wrap;
+}
+.Post .PostImage {
+  border-radius: 5px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.Post .PostImage img {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+}
+.Post .PostImage .Hover {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-radius: 10px;
+  color: transparent;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.Post .PostImage .Hover:hover {
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.Login {
+  display: flex;
+}
+.Login .Header {
+  font-weight: bold;
+  font-size: 30px;
+}
+.Login .Form {
+  padding: 40px;
+  color: white;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: var(--blur) brightness(80%);
+}
+.Login .Form button[type=submit] {
+  background: transparent;
+  width: 50%;
+  margin-inline: auto;
+}
+.Login .Form button[type=submit]:hover {
+  background: white;
+  color: #212121;
+}
+.Login .Status {
+  margin-top: -100%;
+  transition: all 1s ease-out;
+  font-weight: bold;
+}
+.Login .Status.Visible {
+  margin-top: 0;
+}
+.Login .Status.Visible.Error {
+  color: red;
+}
+.Login .StatusContainer {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  backdrop-filter: var(--blur);
+  z-index: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding-inline: 20%;
+}
+.Modal.IsPost {
+  padding-inline: 200px;
+}
+.Modal.Hidden {
+  display: none;
+}
+
+.PostModal {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: 80%;
+  width: 100%;
+  border: var(--glass-border);
+  border-radius: 15px;
+  overflow: hidden;
+}
+.PostModal .PostModalBody {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+}
+.PostModal .PostModalBody .PostModalHeader {
+  display: flex;
+  flex-flow: column;
+  justify-content: left;
+  gap: 10px;
+}
+.PostModal .PostModalBody .PostModalHeader .Bar {
+  position: relative;
+  display: flex;
+  flex-direction: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+}
+.PostModal .PostModalBody .PostModalHeader .Bar .CloseButton {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  background: transparent;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.PostModal .PostModalImageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+}
+.PostModal .PostModalImageContainer .PostModalImage {
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  object-fit: contain;
+}
+
+:root {
+  --glass-border: 2px solid rgba(255, 255, 255, 0.2);
+  --blur: blur(20px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  outline: none;
+  transition: all 0.2s;
+}
+
+a {
+  color: white;
+}
+
+.Body {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.Body::before {
+  content: "";
+  position: fixed;
+  top: 55%;
+  left: 55%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  scale: 1.1;
+  background: url("body-bg.png") no-repeat;
+  filter: grayscale(100%);
+}
+.Body.Login {
+  height: 100vh;
+}
+.Body.Login::before {
+  background: url("login-bg.png") no-repeat;
+  filter: grayscale(100%);
+}
+
+.Content {
+  display: grid;
+  border-radius: 15px;
+  padding: 20px;
+  gap: 20px;
+  grid-template-columns: 1fr 3fr 1fr;
+  justify-items: right;
+}
+.Content .Middle {
+  z-index: -1;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 20px;
+  width: 100%;
+}
+
+.Separator {
+  width: 100%;
+  height: auto;
+  color: white;
+  background: transparent;
+  backdrop-filter: var(--blur);
+  border: var(--glass-border);
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=index.module.css.map */

@@ -1,0 +1,38 @@
+.InputBox {
+	width: 100%;
+	height: 50px;
+	position: relative;
+
+	i {
+		position: absolute;
+		right: 25px;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 20px;
+	}
+}
+
+input,
+select {
+	height: auto;
+	width: 100%;
+	border-radius: 60px;
+	font-size: 15px;
+	font-weight: normal;
+	padding: 10px 30px 10px 30px;
+}
+
+select {
+	cursor: pointer;
+	&::-ms-expand {
+		display: none;
+	}
+	option {
+		color: white;
+		background-color: #474747;
+		font-size: 15px;
+		&:hover {
+			background-color: #212121;
+		}
+	}
+}

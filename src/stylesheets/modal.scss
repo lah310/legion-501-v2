@@ -1,0 +1,76 @@
+.Modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: transparent;
+	backdrop-filter: var(--blur);
+	z-index: 300;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	padding-inline: 20%;
+	&.IsPost {
+		padding-inline: 200px;
+	}
+	&.Hidden {
+		display: none;
+	}
+}
+
+.PostModal {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	height: 80%;
+	width: 100%;
+	border: var(--glass-border);
+	border-radius: 15px;
+	overflow: hidden;
+	.PostModalBody {
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		height: 100%;
+		overflow: auto;
+		position: relative;
+		.PostModalHeader {
+			.Bar {
+				position: relative;
+				display: flex;
+				flex-direction: row nowrap;
+				justify-content: space-between;
+				align-items: center;
+				top: 0;
+				.CloseButton {
+					position: relative;
+					width: 25px;
+					height: 25px;
+					background: transparent;
+					border-radius: 10px;
+					justify-content: center;
+					align-items: center;
+				}
+			}
+			display: flex;
+			flex-flow: column;
+			justify-content: left;
+			gap: 10px;
+		}
+	}
+	.PostModalImageContainer {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: black;
+		.PostModalImage {
+			width: 100%;
+			height: auto;
+			top: 0;
+			left: 0;
+			object-fit: contain;
+		}
+	}
+}

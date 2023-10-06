@@ -1,0 +1,101 @@
+@use './input.scss';
+@use './forms.scss';
+@use './buttons.scss';
+@use './animations.scss';
+@use './nav.scss';
+@use './home.scss';
+@use './miniprofile.scss';
+@use './forum.scss';
+@use './login.scss';
+@use './modal.scss';
+
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Gabarito&family=Poppins:wght@100;400&family=Roboto+Mono&family=Tilt+Prism&display=swap');
+
+// Icons
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+
+:root {
+	--glass-border: 2px solid rgba(255, 255, 255, 0.2);
+	--blur: blur(20px);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	border: none;
+	outline: none;
+	transition: all 0.2s;
+	// border: lime 2px solid !important;
+}
+
+a {
+	color: white;
+}
+
+.Body {
+	width: 100%;
+	height: auto;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	&::before {
+		content: '';
+		position: fixed;
+		top: 55%;
+		left: 55%;
+		width: 100%;
+		height: 100%;
+		transform: translate(-50%, -50%);
+		overflow: hidden;
+		scale: 1.1;
+		background: url('body-bg.png') no-repeat;
+		filter: grayscale(100%);
+	}
+	&.Login {
+		height: 100vh;
+		&::before {
+			background: url('login-bg.png') no-repeat;
+			filter: grayscale(100%);
+		}
+	}
+}
+
+.Content {
+	display: grid;
+	border-radius: 15px;
+	padding: 20px;
+	gap: 20px;
+	grid-template-columns: 1fr 3fr 1fr;
+	justify-items: right;
+	.Middle {
+		z-index: -1;
+		display: flex;
+		flex-flow: column nowrap;
+		gap: 20px;
+		width: 100%;
+	}
+}
+
+.Separator {
+	width: 100%;
+	height: auto;
+	color: white;
+	background: transparent;
+	backdrop-filter: var(--blur);
+	border: var(--glass-border);
+	padding: 20px;
+	border-radius: 15px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+}
